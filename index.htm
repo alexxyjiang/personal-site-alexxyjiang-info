@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to Alex Personal Site!</title>
+<style type="text/css">
+ul{
+    margin:     0 auto;
+    padding:    0;
+}
+ul.horizontal_list li{
+    text-align:     left;
+    float:          left;
+    list-style:     none;
+    padding:        3px 10px 3px 10px;
+    margin:         5px;
+    border:         1px solid #CCC;
+}
+</style>
+</head>
+<body>
+<h1>Welcome to Alex Personal Site!</h1>
+<p></p>
+<h2 id='clockid'></h2>
+<script type="text/javascript" language="JavaScript">
+function pgClock() {
+    var sTime=(new Date()).toString();
+    document.getElementById('clockid').innerHTML =
+        sTime.substring(0, 3+sTime.lastIndexOf(':')); // hh:mm:ss
+    setTimeout('pgClock()', 200); // refresh time every 200ms
+}
+pgClock();
+</script>
+<p>Personal Site <a href="http://www.arvixe.com" target="_blank">Hosted By Arvixe</a></p>
+<ul class="horizontal_list">
+    <li><a href="./wiki">wiki</a></li>
+    <li><a href="./gallery">gallery</a></li>
+    <li><a href="./wp">wordpress</a></li>
+</ul>
+</body>
+</html>
