@@ -8,6 +8,16 @@ body{
     background-image:   url(./bg-pattern.png);
     background-repeat:  repeat
 }
+h1.main{
+    width:      800px;
+    text-align: center;
+}
+h2.time_mail{
+    width:      800px;
+}
+a.email{
+    float:      right;
+}
 ul{
     height:     128px;
     margin:     0 auto;
@@ -24,10 +34,9 @@ ul.horizontal_list li{
 </style>
 </head>
 <body>
-<h1>Welcome to Alex Personal Site!</h1>
-<p></p>
-<h2 id='clockid'></h2>
-<script type="text/javascript" language="JavaScript">
+<h1 class="main">Welcome to Alex Personal Site!</h1>
+<h2 class="time_mail"><span id="clockid"></span><a class="email" href="mailto:alexxyjiang@gmail.com">contact me</a></h2>
+<script type="text/javascript">
 function pgClock() {
     var sTime=(new Date()).toString();
     document.getElementById('clockid').innerHTML =
