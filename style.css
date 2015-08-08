@@ -1,0 +1,40 @@
+body{
+    background-image:   url(./bg-pattern.png);
+    background-repeat:  repeat
+}
+h1.main{
+    width:      800px;
+    text-align: center;
+}
+h2.time_mail{
+    width:      800px;
+}
+a.email{
+    float:      right;
+}
+ul{
+    height:     128px;
+    margin:     0 auto;
+    padding:    0;
+}
+ul.horizontal_list li{
+    text-align:             center; width: 200px;
+    float:                  left;
+    list-style:             none;
+    padding:                3px 10px 3px 10px;
+    margin:                 5px;
+    border:                 1px solid #CCC;
+    border-radius:          5px;
+    -webkit-border-radius:  5px;
+    -moz-border-radius:     5px;
+    box-shadow:             #666 3px 3px 3px;
+    -webkit-box-shadow:     #666 3px 3px 3px;
+    -moz-box-shadow:        #666 3px 3px 3px;
+    background:             #FFFFFF;
+    background:             linear-gradient(#FFFFFF, #8AC6F2);
+    background:             -webkit-gradient(linear, 0 0, 0 bottom, from(#FFFFFF), to(#8AC6F2));
+    background:             -webkit-linear-gradient(#FFFFFF, #8AC6F2);
+    background:             -moz-linear-gradient(#FFFFFF, #8AC6F2);
+    background:             -ms-linear-gradient(#FFFFFF, #8AC6F2);
+    background:             -o-linear-gradient(#FFFFFF, #8AC6F2);
+}
