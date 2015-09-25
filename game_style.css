@@ -6,3 +6,11 @@ h1.title{
     width:      100%;
     text-align: center;
 }
+canvas.dashboard{
+    position:   fixed;
+    border:     0px;
+}
+canvas.playground{
+    position:   fixed;
+    border:     1px solid #777777;
+}

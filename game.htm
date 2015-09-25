@@ -1,23 +1,50 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Game</title>
-<link rel="stylesheet" href="game_style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Game</title>
+    <link rel="stylesheet" href="game_style.css">
 </head>
 <body>
-<h1 id="gamename" class="title">The 9 Game</h1>
-<canvas id="dashboard" height="10%" width="80%" style="border:1px solid #777777">
-Your browser does not support the HTML5 canvas tag.
-</canvas>
-<canvas id="playground" height="80%" width="80%" style="border:1px solid #777777">
-Your browser does not support the HTML5 canvas tag.
-</canvas>
-<script type="text/javascript">
-var c=document.getElementById("dashboard");
-var cxt=c.getContext("2d");
-cxt.fillStyle="#FF0000";
-cxt.fillRect(0,0,150,75);
-</script>
+    <h1 id="gamename" class="title">The 9 Game</h1>
+    <canvas id="dashboard" class="dashboard">
+    Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <canvas id="playground" class="playground">
+    Your browser does not support the HTML5 canvas tag.
+    </canvas>
 </body>
+<script type="text/javascript">
+window.onload = window.onresize = function() {
+    var ratio_width     = 0.8;  // dashboard width ratio
+    var ratio_rect      = 0.8;  // playground width & height ratio
+
+    var viewport_width  = window.innerWidth;
+    var viewport_height = window.innerHeight;
+    var base_posi       = 50; //TODO: fix base posi calculation, document.getElementById("gamename").style.height;
+
+    var canvas_dashboard_width      = viewport_width * ratio_width;
+    var canvas_dashboard_height     = (viewport_height - base_posi) * (1.0 - ratio_rect);
+    var canvas_playground_width     = (viewport_height - base_posi) * ratio_rect;
+    var canvas_playground_height    = (viewport_height - base_posi) * ratio_rect;
+    console.log(canvas_dashboard_width);
+    console.log(canvas_dashboard_height);
+    console.log(canvas_playground_width);
+    console.log(canvas_playground_height);
+
+    var el_dashboard    = document.getElementById("dashboard");
+    var el_playground   = document.getElementById("playground");
+
+    // TODO: top & left position calculation
+    el_dashboard.setAttribute("width",  canvas_dashboard_width);
+    el_dashboard.setAttribute("height", canvas_dashboard_height);
+    el_dashboard.style.top          = base_posi;
+    el_dashboard.style.left         = (viewport_width - canvas_dashboard_width) / 2;
+
+    el_playground.setAttribute("width",  canvas_playground_width);
+    el_playground.setAttribute("height", canvas_playground_height);
+    el_playground.style.top         = base_posi + canvas_dashboard_height;
+    el_playground.style.left        = (viewport_width - canvas_playground_width) / 2;
+}
+</script>
 </html>
